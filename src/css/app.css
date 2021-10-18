@@ -1,1 +1,38 @@
 @import-normaliza;
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.map,
+.map-placeholder {
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn {
+  background: none;
+  background-color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+form {
+  position: relative;
+}
+
+.error {
+  color: red;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loader {
+  font-size: 3rem;
+}

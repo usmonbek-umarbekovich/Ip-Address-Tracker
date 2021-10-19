@@ -27,11 +27,10 @@ li {
   flex-direction: column;
   overflow-x: hidden;
   background: #f4f4f4;
-  min-height: 100vh;
 }
 
 .header {
-  height: 40vh;
+  height: 15.5rem;
   background: url('../images/pattern-bg.png') no-repeat left top;
 }
 
@@ -116,6 +115,7 @@ li {
   display: flex;
   flex-direction: column;
   min-height: 5.5rem;
+  height: 100%;
   padding: 0 1.5rem;
   border-right: 1px solid var(--secondary-color);
 }
@@ -140,6 +140,7 @@ li {
 .map-placeholder {
   flex: 1;
   display: flex;
+  min-height: 60vh;
 }
 
 .map {
@@ -175,5 +176,79 @@ li {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 850px) {
+  .data-item .data-name {
+    font-size: 0.8rem;
+  }
+
+  .data-item .data-content {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .header-title {
+    margin-top: 2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .address-form {
+    margin: 1.5rem 0;
+  }
+
+  .data-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .data-container .data-item {
+    min-height: 5rem;
+  }
+
+  .data-item .data-content {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-title {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    line-height: 1.2;
+    font-size: 1.8rem;
+  }
+
+  .address-form {
+    margin: 1rem 0;
+  }
+
+  .data-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 0.5rem;
+  }
+
+  .data-container .data-item {
+    border-right: none;
+    min-height: 0;
+    text-align: center;
+  }
+
+  .data-item .data-name {
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  .data-item .data-content {
+    margin-top: 0;
+  }
+}
+
+@media (max-height: 600px) {
+  .map-placeholder {
+    min-height: 100vh;
   }
 }

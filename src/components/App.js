@@ -28,27 +28,39 @@ function App() {
   function handleSearch(address) {
     async function getData() {
       setLoading(true);
-      const res = await fetch(
-        `${BASE_URL}?apiKey=${API_KEY}&ipAddress=${address}`
-      );
-      if (!res.ok) return setError(true);
-
-      const data = await res.json();
-      setData(data);
-      setLoading(false);
+      setError(false);
+      try {
+        let res = await fetch(
+          `${BASE_URL}?apiKey=${API_KEY}&ipAddress=${address}`
+        );
+        if (!res.ok) {
+          res = await fetch(`${BASE_URL}?apiKey=${API_KEY}&domain=${address}`);
+          if (!res.ok) {
+            throw new Error();
+          }
+        }
+        const data = await res.json();
+        setData(data);
+      } catch (_) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
     }
     getData();
   }
 
   return (
     <>
-      <div className='container'>
-        <h1>Ip Address Tracker</h1>
-        <Search handleSearch={handleSearch} error={error} />
-        <SearchResults data={data} />
-      </div>
+      <header className='header'>
+        <div className='container'>
+          <h1 className='header-title'>Ip Address Tracker</h1>
+          <Search handleSearch={handleSearch} error={error} />
+          <SearchResults data={data} />
+        </div>
+      </header>
       <div className='map-placeholder'>
-        {data.location && <Map location={data.location} />}
+        {data.location && <Map location={data.location} name={data.isp} />}
       </div>
       {loading && (
         <div className='loader-overlay'>

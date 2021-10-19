@@ -21,20 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Sketch and Figma design files
-*.sketch
-*.fig
-
-# XD file
-*.xd
-
-# .DS_Store files!
-.DS_Store
-
-.prettierignore
-
-# temporary files
-design
-style-guide.md
-README-App.md

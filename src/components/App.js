@@ -13,7 +13,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const BASE_URL = 'https://geo.ipify.org/api/v2/country,city';
-  const API_KEY = 'at_o0IVyHVux9lIPxQj99QfmdnmiyhvQ';
+  const API_KEY = 'at_WxCEFmGrdYUPMWLtyyuTU3JiYB9ea';
 
   useEffect(() => {
     async function getPersonalData() {

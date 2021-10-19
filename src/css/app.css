@@ -66,6 +66,7 @@ li {
   display: flex;
   align-items: center;
 }
+
 .address-form .input {
   flex: 1;
   height: 100%;
@@ -140,7 +141,7 @@ li {
 .map-placeholder {
   flex: 1;
   display: flex;
-  min-height: 60vh;
+  min-height: calc(100vh - 15.5rem);
 }
 
 .map {

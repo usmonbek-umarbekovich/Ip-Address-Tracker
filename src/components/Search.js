@@ -12,12 +12,13 @@ const Search = ({ handleSearch, error }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='address-form'>
       <input
         type='text'
         placeholder='Search for any IP address or domain'
         value={address}
-        style={{ border: error ? '1px dotted red' : 'none' }}
+        className='input'
+        style={{ border: error ? '2px dotted red' : 'none' }}
         onChange={e => setAddress(e.target.value)}
       />
       <button type='submit' className='btn'>
